@@ -1,14 +1,21 @@
-def binary_search(list, item):
+"""
+二分查找算法实现
+"""
+
+
+def binary_search(target_list, item):
     """有序数值列表的二分查找实现"""
     low = 0
-    high = len(list) - 1
+    high = len(target_list) - 1
     while low <= high:
         # (low + high) / 2 的值为浮点数，需要转为整数
-        mid = int((low + high) / 2)
+        # mid = int((low + high) / 2)
+        # 通过 // 运算符获取除法的商的整数部分
+        mid = (low + high) // 2
         print(mid)
-        if list[mid] == item:
+        if target_list[mid] == item:
             return mid
-        elif list[mid] > item:
+        elif target_list[mid] > item:
             high = mid - 1
         else:
             low = mid + 1
